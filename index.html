@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="../www/css/style.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: blue; /* Change to your desired background color */
+            background-size: cover;
+            height: 100vh; /* Set height to fill the screen */
+            overflow: hidden; /* Prevent scrolling */
+            position: relative; /* For absolute positioning of elements */
+            padding-bottom: 100px; /* Add padding to accommodate the footer */
+            overflow-y: auto;
+            padding: 350px; 
+            padding-right: 400px;
+            left: 350px;
+            top:-150px
+        }
+        .profile-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            border: 5px solid white;
+        }
+        header {
+            position: fixed;
+            z-index: 1;
+            text-align: center;
+            color: white;
+        }
+        .custom-header {
+            position: absolute;
+            top: 450px;
+            left: -80px;
+            transform: translateX(-50%);
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .custom-header {
+                top: 250px; /* Adjust as needed */
+                left: 50%;
+                transform: translateX(-50%);
+            }
+    
+}
+
+        
+    </style>
+    <nav><div id="navbar"></div></nav>
+</head>
+
+<header class="custom-header">
+    <img src="/image/my2.jpg" alt="Profile Image" class="profile-image">
+</header>
+<body>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  My Personal Info
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  Yusuf Hasan Nazila<br>
+                  Computer Science Student at ITS (Institut Teknologi Sepuluh Nopember)<br>
+                  Specializing in Informatics Engineering<br>
+                  Interests: Project Management and Computer Networks<br>
+                  Currently engaged in the Bangkit Project on Cloud Computing, connecting machine learning with mobile development, set to complete in July 2024.<br>
+                  Seeking opportunities to apply my skills and grow as a professional.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Education and Study Experient
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>Institut Teknologi Sepuluh Nopember - Surabaya</strong>
+                 <p> Bachelor's in Informatics Engineering,</p>
+                 <p>GPA 3.46/4.0</p> 
+                 <p> Jul 2021 – Present</p>
+                </div>
+                <div class="accordion-body">
+                <strong>Bangkit Academy</strong>
+                   <p> Cloud Computing</p>
+                   <p> Feb 2024 – Jul 2024</p>
+                  </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Contact Information
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p>Phone: +62 851 5633 6236</p>
+                    <p>Email: <a href="mailto:hnazila71@gmail.com">hnazila71@gmail.com</a></p>
+                    <p>LinkedIn: <a href="https://www.linkedin.com/in/yusuf-hasan-nazila">linkedin.com/in/yusuf-hasan-nazila</a></p>
+                    <p>GitHub: <a href="https://github.com/hnazila71">github.com/hnazila71</a></p>
+                    <p>Address: Pekalongan</p>
+                    
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Yusuf Hasan Nazila. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        fetch('/navbar/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+            
+    </script>
+    
+</body>
+</html>
